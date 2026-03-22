@@ -6,7 +6,13 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  // プロジェクト固有の除外設定
+  globalIgnores([
+    'dist/**',
+    'node_modules/**',
+    'reinfolib-proxy/.wrangler/**',
+    'reinfolib-proxy/worker-configuration.d.ts',
+  ]),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -16,8 +22,13 @@ export default defineConfig([
       reactRefresh.configs.vite,
     ],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest', // 最新のJS構文を許可
       globals: globals.browser,
+    },
+    // カスタムルールの追加
+    rules: {
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'prefer-const': 'warn',
     },
   },
 ])

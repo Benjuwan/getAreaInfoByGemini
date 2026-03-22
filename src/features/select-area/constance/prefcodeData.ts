@@ -1,4 +1,8 @@
-import type { PrefCodeType } from "../ts/prefcode";
+type PrefCodeType = {
+    prefcode: string;
+    prefJaName: string;
+    prefRomenName: string;
+};
 
 export const prefcodeData: PrefCodeType[] = [
     {

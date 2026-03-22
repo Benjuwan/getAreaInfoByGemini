@@ -21,6 +21,13 @@
 - typescript@5.9.3
 - vite@8.0.1
 
+## 必要ファイル
+- `.env`
+```bash
+VITE_CLOUDFLARE_SUBDOMAIN = プロジェクトディレクトリ名.cloudflare-worker名.workers.dev
+VITE_WORKER_ENDPOINT = 設定した公開エンドポイント/api/reinfolib
+```
+
 ## ToDo / Wants
 - 不動産APIの設定
     - サーバーアクション or useSWRを用いた汎用コンポーネント

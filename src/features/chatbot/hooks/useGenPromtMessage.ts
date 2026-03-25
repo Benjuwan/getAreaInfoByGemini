@@ -6,7 +6,7 @@ const IS_DEV: boolean = import.meta.env.DEV;
 
 const _geminiCall = async (thePromtMessage: string, imageParts?: imagePartsType[]): Promise<string> => {
     // Cloudflare Workers に置いている Gemini API の公開エンドポイント
-    const API_URL = import.meta.env.VITE_WORKER_ENDPOINT;
+    const API_URL = import.meta.env.VITE_CHATBOT_WORKER_ENDPOINT;
 
     const response = await fetch(API_URL, {
         method: "POST",

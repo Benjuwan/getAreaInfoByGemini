@@ -17,9 +17,9 @@
 - react-markdown@10.1.0
 - react@19.2.4
 - tailwindcss@4.2.2
-- typescript-eslint@8.57.1
+- typescript-eslint@8.57.2
 - typescript@5.9.3
-- vite@8.0.1
+- vite@8.0.2
 
 ## 必要ファイル
 - `.env`

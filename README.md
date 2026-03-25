@@ -25,11 +25,9 @@
 - `.env`
 ```bash
 VITE_CLOUDFLARE_SUBDOMAIN = プロジェクトディレクトリ名.cloudflare-worker名.workers.dev
+VITE_CHATBOT_WORKER_ENDPOINT = Chatbotの公開エンドポイント/api/generate
 VITE_WORKER_ENDPOINT = 設定した公開エンドポイント/api/reinfolib
 ```
 
 ## ToDo / Wants
-- 不動産APIの設定
-    - サーバーアクション or useSWRを用いた汎用コンポーネント
-- chatbot呼び出しエンドポイントの設定
 - AIに情報集及び回答してもらう、選択したエリア情報のテーマ選定及びプロンプト調整

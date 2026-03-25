@@ -1,10 +1,4 @@
-type PrefCodeType = {
-    prefcode: string;
-    prefJaName: string;
-    prefRomenName: string;
-};
-
-export const prefcodeData: PrefCodeType[] = [
+export const prefcodeData = [
     {
         "prefcode": "01",
         "prefJaName": "北海道",
@@ -240,4 +234,4 @@ export const prefcodeData: PrefCodeType[] = [
         "prefJaName": "沖縄県",
         "prefRomenName": "Okinawa Prefecture"
     }
-];
+] as const; // リテラル型として固める（readonly：編集不可にする）

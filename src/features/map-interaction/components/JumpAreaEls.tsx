@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { SelectPrefCities } from "../../select-area/components/SelectPrefCities";
 
 export const JumpAreaEls = memo(() => {
     return (
@@ -19,6 +20,7 @@ export const JumpAreaEls = memo(() => {
                         </dl>
                     </li>
                 </ul>
+                <SelectPrefCities prefJaName="北海道" />
             </div>
 
             {/* 東北地方 */}
@@ -481,9 +483,9 @@ export const JumpAreaEls = memo(() => {
                 </ul>
             </div>
 
-            {/* 九州沖縄地方 */}
+            {/* 九州地方 */}
             <div className="mb-[2.5em] bg-[#ea5632] rounded p-4 h-full" id="area-kyushu">
-                <h3 className="font-bold text-lg mb-4 text-white">九州沖縄地方</h3>
+                <h3 className="font-bold text-lg mb-4 text-white">九州地方</h3>
                 <ul className="space-y-4">
                     <li id="pref-fukuoka" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">福岡県</h4>
@@ -562,6 +564,13 @@ export const JumpAreaEls = memo(() => {
                             </div>
                         </dl>
                     </li>
+                </ul>
+            </div>
+
+            {/* 沖縄地方 */}
+            <div className="mb-[2.5em] bg-[#ea3278] rounded p-4 h-full" id="area-okinawa">
+                <h3 className="font-bold text-lg mb-4 text-white">沖縄地方</h3>
+                <ul className="space-y-4">
                     <li id="pref-okinawa" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">沖縄県</h4>
                         <dl className="text-sm">

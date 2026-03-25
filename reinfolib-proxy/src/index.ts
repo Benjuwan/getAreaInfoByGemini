@@ -1,5 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors';
+import { ContentfulStatusCode } from 'hono/utils/http-status';
+// import { ALLOWED_ORIGINS } from '../config/theConfig';
 
 type Bindings = {
   REINFOLIB_API_KEY: string;
@@ -46,7 +48,9 @@ app.post('/api/reinfolib', async (c) => {
     );
 
     if (!response.ok) {
-      return c.json({ error: 'Failed to fetch from Reinfolib' }, response.status);
+      // HonoはHTTPステータスコードの事前想定含めて高度に設計されているので
+      // 型推論の上書き処理（`as ContentfulStatusCode`）を実施してもそこまで危険性はない
+      return c.json({ error: 'Failed to fetch from Reinfolib' }, response.status as ContentfulStatusCode);
     }
 
     const result = await response.json(); // Promiseを解決してデータを取得
@@ -60,6 +64,5 @@ app.post('/api/reinfolib', async (c) => {
     return c.json({ error: 'Internal server error' }, 500);
   }
 });
-
 
 export default app

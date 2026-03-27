@@ -18,9 +18,9 @@ export const JumpAreaEls = memo(() => {
                                 </dd>
                             </div>
                         </dl>
+                        <SelectPrefCities prefJaName="北海道" />
                     </li>
                 </ul>
-                <SelectPrefCities prefJaName="北海道" />
             </div>
 
             {/* 東北地方 */}
@@ -37,6 +37,7 @@ export const JumpAreaEls = memo(() => {
                                 </dd>
                             </div>
                         </dl>
+                        <SelectPrefCities prefJaName="青森県" />
                     </li>
                     <li id="pref-iwate" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">岩手県</h4>
@@ -48,6 +49,7 @@ export const JumpAreaEls = memo(() => {
                                 </dd>
                             </div>
                         </dl>
+                        <SelectPrefCities prefJaName="岩手県" />
                     </li>
                     <li id="pref-miyagi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">宮城県</h4>

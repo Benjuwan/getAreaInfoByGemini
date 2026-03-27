@@ -5,7 +5,7 @@
 ## 技術構成
 - @eslint/js@9.39.4
 - @tailwindcss/vite@4.2.2
-- @types/node@24.12.0
+- @types/node@25.5.0
 - @types/react-dom@19.2.3
 - @types/react@19.2.14
 - @vitejs/plugin-react@6.0.1
@@ -19,7 +19,8 @@
 - tailwindcss@4.2.2
 - typescript-eslint@8.57.2
 - typescript@5.9.3
-- vite@8.0.2
+- vite@8.0.3
+- zustand@5.0.12
 
 ## 必要ファイル
 - `.env`

@@ -1,5 +1,6 @@
-import { useMemo, useState, type ChangeEvent, type SyntheticEvent } from "react";
+import { useState, type ChangeEvent, type SyntheticEvent } from "react";
 import type { chatFormPropsType, filePreviewType, imagePartsType } from "./type/GeminiType";
+import { useChatviewStore } from "../../stores/useChatviewStore";
 import { FileUploader } from "./FileUploader";
 import { useGenerateChat } from "./hooks/useGenerateChat";
 import { useHandleInputValueSanitize } from "./hooks/useHandleInputValueSanitize";
@@ -7,6 +8,8 @@ import { useCheckDesktopView } from "./hooks/useCheckDesktopView";
 
 export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
     const { loading, setLoading, chatHistory, setChatHistory, handleChatView } = props;
+
+    const selectedCityname = useChatviewStore((state) => state.selectedCityname);
 
     const { generateChat } = useGenerateChat();
     const { isDesktopView } = useCheckDesktopView();
@@ -20,25 +23,30 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
         setInput(sanitizedPrompt);
     }
 
+    const prepareGenerateChat = (): void => {
+        const userPromptMessage = chatHistory.length === 0 ? `対象エリア：${selectedCityname} \n ${input}` : input;
+        console.log(userPromptMessage, chatHistory.length);
+
+        generateChat(
+            setLoading,
+            chatHistory, setChatHistory,
+            userPromptMessage, setInput,
+            imageParts
+        );
+    }
+
     // AI解析用に調整したファイル情報
-    const imageParts: imagePartsType[] = useMemo(() => {
-        return filePreviews.map(fileItem => ({
-            name: fileItem.file.name,
-            type: fileItem.file.type,
-            size: fileItem.file.size,
-            base64Data: fileItem.preview ? fileItem.preview.split(',')[1] : null,
-        }));
-    }, [filePreviews]);
+    const imageParts: imagePartsType[] = filePreviews.map(fileItem => ({
+        name: fileItem.file.name,
+        type: fileItem.file.type,
+        size: fileItem.file.size,
+        base64Data: fileItem.preview ? fileItem.preview.split(',')[1] : null,
+    }));
 
     // 送信ボタンによるチャット生成
     const handleSubmit = (e: ChangeEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        generateChat(
-            setLoading,
-            chatHistory, setChatHistory,
-            input, setInput,
-            imageParts
-        );
+        prepareGenerateChat();
     }
 
     // `textarea`でのチャット生成イベント実施： com/ctrl + shift + enter キー押下
@@ -49,12 +57,7 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
         const isEnterKeydown: boolean = e.key === 'Enter';
 
         if (input.length > 0 && is_MacCom_WinCtrlKeydown && isShiftKeydown && isEnterKeydown) {
-            generateChat(
-                setLoading,
-                chatHistory, setChatHistory,
-                input, setInput,
-                imageParts
-            );
+            prepareGenerateChat();
         }
     }
 
@@ -64,7 +67,8 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
             {handleChatView &&
                 <div className="flex justify-end"><button type="button" onClick={handleChatView} className="cursor-pointer mb-2 text-[#d90f0f] underline text-xs hover:no-underline active:no-underline">チャットを閉じる</button></div>
             }
-            <textarea className="text-base pl-[.25em] w-full h-[50vw] max-h-96 border border-[#bebebe] rounded mb-4 lg:h-[clamp(80px,50vh,240px)]" onKeyDown={handleKeydown} name="entryUserMess" value={input} disabled={loading} onChange={(e: SyntheticEvent<HTMLTextAreaElement>) => handleInput(e)}>&nbsp;</textarea>
+            <p className="text-xs">- 選択中のエリア：【{selectedCityname}】</p>
+            <textarea className="text-base pl-[.25em] w-full h-[50vw] max-h-96 border border-[#bebebe] rounded mb-4 lg:h-[clamp(80px,50vh,240px)]" onKeyDown={handleKeydown} name="entryUserMess" value={input} disabled={loading} onChange={(e: SyntheticEvent<HTMLTextAreaElement>) => handleInput(e)} placeholder={`${selectedCityname} を対象に調べる`}>&nbsp;</textarea>
             <FileUploader props={{
                 loading: loading,
                 filePreviews: filePreviews,

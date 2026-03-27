@@ -1,10 +1,14 @@
 import { useState, memo, type SyntheticEvent, useEffect, useCallback } from 'react';
 import { WORKER_ENDPOINT } from '../constance/reinfolib-config';
-import type { CityAryType, GetCityAryData, prefJaNameType } from '../ts/cityDataAryEls';
 import { prefcodeData } from '../constance/prefcodeData';
+import { useChatviewStore } from '../../../stores/useChatviewStore';
+import type { CityAryType, GetCityAryData, prefJaNameType } from '../ts/cityDataAryEls';
 
 export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameType }) => {
     const [cities, setCities] = useState<CityAryType[]>([]);
+
+    const handleChatView = useChatviewStore((state) => state.handleChatView);
+    const setCityname = useChatviewStore((state) => state.setCityname);
 
     const getCityAryData = useCallback(async (prefJaName: prefJaNameType): Promise<CityAryType[]> => {
         // Props で渡ってきた都道府県名に準拠する都道府県コードを取得
@@ -28,6 +32,8 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
     }, []);
 
     const runChatbot = (e: SyntheticEvent<HTMLSelectElement>): void => {
+        handleChatView();
+        setCityname(`${prefJaName}${e.currentTarget.value}`);
         console.log(prefJaName, e.currentTarget.value);
         return;
     }
@@ -35,27 +41,27 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
     useEffect(() => {
         const initCityAryData: CityAryType = {
             id: 'init',
-            name: '選択してください'
+            name: `${prefJaName}の市区町村`
         }
         const fetcedCitiesData = getCityAryData(prefJaName);
         fetcedCitiesData.then(data => setCities([initCityAryData, ...data]));
     }, [prefJaName, getCityAryData, setCities]);
 
     return (
-        <section>
-            <select
-                name="CITIES_LISTS"
-                id="CITIES_LISTS"
-                onChange={runChatbot}
-            >
-                {cities.length > 0 &&
-                    <>
-                        {cities.map(city => (
-                            <option key={city.id} value={city.name}>{city.name}</option>
-                        ))}
-                    </>
-                }
-            </select>
+        <section className='my-4'>
+            {cities.length > 0 ?
+                <select
+                    name="CITIES_LISTS"
+                    id="CITIES_LISTS"
+                    className='border border-[#dadada] rounded-sm text-base'
+                    onChange={runChatbot}
+                >
+                    {cities.map(city => (
+                        <option key={city.id} value={city.name}>{city.name}</option>
+                    ))}
+                </select> :
+                <p>...loading</p>
+            }
         </section>
     );
 });

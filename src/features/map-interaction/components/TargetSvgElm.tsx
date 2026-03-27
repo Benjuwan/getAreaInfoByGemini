@@ -1,8 +1,8 @@
-import type { SyntheticEvent } from "react";
+import { memo, type SyntheticEvent } from "react";
 import { useCheckDesktopView } from "../hooks/useCheckDesktopView";
 
 // マップのSVGデータコンポーネント
-export const TargetSvgElm = ({ clickInteractionArea }: { clickInteractionArea: (targetElm: SyntheticEvent<SVGGElement>) => void }) => {
+export const TargetSvgElm = memo(({ clickInteractionArea }: { clickInteractionArea: (targetElm: SyntheticEvent<SVGGElement>) => void }) => {
     const { isDesktopView } = useCheckDesktopView();
 
     return (
@@ -368,4 +368,4 @@ export const TargetSvgElm = ({ clickInteractionArea }: { clickInteractionArea: (
             </g>
         </svg>
     );
-}
+});

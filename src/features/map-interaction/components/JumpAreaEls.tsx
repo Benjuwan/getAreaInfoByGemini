@@ -10,14 +10,6 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-hokkaido" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">北海道</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
                         <SelectPrefCities prefJaName="北海道" />
                     </li>
                 </ul>
@@ -29,71 +21,27 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-aomori" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">青森県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
                         <SelectPrefCities prefJaName="青森県" />
                     </li>
                     <li id="pref-iwate" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">岩手県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
                         <SelectPrefCities prefJaName="岩手県" />
                     </li>
                     <li id="pref-miyagi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">宮城県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="宮城県" />
                     </li>
                     <li id="pref-akita" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">秋田県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="秋田県" />
                     </li>
                     <li id="pref-yamagata" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">山形県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="山形県" />
                     </li>
                     <li id="pref-fukushima" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">福島県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="福島県" />
                     </li>
                 </ul>
             </div>
@@ -104,80 +52,31 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-ibaraki" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">茨城県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="茨城県" />
                     </li>
                     <li id="pref-tochigi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">栃木県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="栃木県" />
                     </li>
                     <li id="pref-gunma" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">群馬県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="群馬県" />
                     </li>
                     <li id="pref-saitama" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">埼玉県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="埼玉県" />
                     </li>
                     <li id="pref-chiba" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">千葉県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="千葉県" />
                     </li>
                     <li id="pref-tokyo" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">東京都</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="東京都" />
                     </li>
                     <li id="pref-kanagawa" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">神奈川県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="神奈川県" />
                     </li>
                 </ul>
             </div>
@@ -188,102 +87,39 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-niigata" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">新潟県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="新潟県" />
                     </li>
                     <li id="pref-toyama" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">富山県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="富山県" />
                     </li>
                     <li id="pref-ishikawa" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">石川県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="石川県" />
                     </li>
                     <li id="pref-fukui" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">福井県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="福井県" />
                     </li>
                     <li id="pref-yamanashi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">山梨県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="山梨県" />
                     </li>
                     <li id="pref-nagano" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">長野県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="長野県" />
                     </li>
                     <li id="pref-gifu" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">岐阜県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="岐阜県" />
                     </li>
                     <li id="pref-shizuoka" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">静岡県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="静岡県" />
                     </li>
                     <li id="pref-aichi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">愛知県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="愛知県" />
                     </li>
                 </ul>
             </div>
@@ -294,80 +130,31 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-mie" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">三重県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="三重県" />
                     </li>
                     <li id="pref-shiga" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">滋賀県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="滋賀県" />
                     </li>
                     <li id="pref-kyoto" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">京都府</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="京都府" />
                     </li>
                     {/* <li id="pref-osaka" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">大阪府</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="大阪府" />
                     </li> */}
                     <li id="pref-hyogo" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">兵庫県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="兵庫県" />
                     </li>
                     <li id="pref-nara" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">奈良県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="奈良県" />
                     </li>
                     <li id="pref-wakayama" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">和歌山県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="和歌山県" />
                     </li>
                 </ul>
             </div>
@@ -378,58 +165,23 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-tottori" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">鳥取県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="鳥取県" />
                     </li>
                     <li id="pref-shimane" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">島根県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="島根県" />
                     </li>
                     <li id="pref-okayama" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">岡山県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="岡山県" />
                     </li>
                     <li id="pref-hiroshima" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">広島県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="広島県" />
                     </li>
                     <li id="pref-yamaguchi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">山口県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="山口県" />
                     </li>
                 </ul>
             </div>
@@ -440,47 +192,19 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-tokushima" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">徳島県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="徳島県" />
                     </li>
                     <li id="pref-kagawa" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">香川県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="香川県" />
                     </li>
                     <li id="pref-ehime" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">愛媛県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="愛媛県" />
                     </li>
                     <li id="pref-kouchi" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">高知県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="高知県" />
                     </li>
                 </ul>
             </div>
@@ -491,80 +215,31 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-fukuoka" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">福岡県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="福岡県" />
                     </li>
                     <li id="pref-saga" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">佐賀県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="佐賀県" />
                     </li>
                     <li id="pref-nagasaki" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">長崎県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="長崎県" />
                     </li>
                     <li id="pref-kumamoto" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">熊本県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="熊本県" />
                     </li>
                     <li id="pref-ooita" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">大分県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="大分県" />
                     </li>
                     <li id="pref-miyazaki" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">宮崎県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="宮崎県" />
                     </li>
                     <li id="pref-kagoshima" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">鹿児島県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="鹿児島県" />
                     </li>
                 </ul>
             </div>
@@ -575,14 +250,7 @@ export const JumpAreaEls = memo(() => {
                 <ul className="space-y-4">
                     <li id="pref-okinawa" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">沖縄県</h4>
-                        <dl className="text-sm">
-                            <div>
-                                <dt className="font-semibold text-gray-600 mb-1">情報見出し</dt>
-                                <dd>
-                                    <div className="text-gray-500">ここに img や 複数のpを置いた詳細情報を掲載</div>
-                                </dd>
-                            </div>
-                        </dl>
+                        <SelectPrefCities prefJaName="沖縄県" />
                     </li>
                 </ul>
             </div>

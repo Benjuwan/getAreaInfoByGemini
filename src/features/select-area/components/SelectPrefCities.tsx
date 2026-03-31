@@ -31,7 +31,7 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
         return data.data;
     }, []);
 
-    const runChatbot = (e: SyntheticEvent<HTMLSelectElement>): void => {
+    const changeTargetArea = (e: SyntheticEvent<HTMLSelectElement>): void => {
         handleChatView();
         setCityname(`${prefJaName}${e.currentTarget.value}`);
         console.log(prefJaName, e.currentTarget.value);
@@ -50,16 +50,19 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
     return (
         <section className='my-4'>
             {cities.length > 0 ?
-                <select
-                    name="CITIES_LISTS"
-                    id="CITIES_LISTS"
-                    className='border border-[#dadada] rounded-sm text-base'
-                    onChange={runChatbot}
-                >
-                    {cities.map(city => (
-                        <option key={city.id} value={city.name}>{city.name}</option>
-                    ))}
-                </select> :
+                <>
+                    <p className='text-sm mb-4'>情報取集対象エリアを選択（以下から市区町村を選択してください）</p>
+                    <select
+                        name="CITIES_LISTS"
+                        id="CITIES_LISTS"
+                        className='border border-[#dadada] rounded-sm text-base'
+                        onChange={changeTargetArea}
+                    >
+                        {cities.map(city => (
+                            <option key={city.id} value={city.name}>{city.name}</option>
+                        ))}
+                    </select>
+                </> :
                 <p>...loading</p>
             }
         </section>

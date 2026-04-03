@@ -24,7 +24,7 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
     }
 
     const prepareGenerateChat = (): void => {
-        const userPromptMessage = chatHistory.length === 0 ? `対象エリア：${selectedCityname} \n ${input}` : input;
+        const userPromptMessage = `対象エリア：${selectedCityname} | \n ${input}`;
         console.log(userPromptMessage, chatHistory.length);
 
         generateChat(

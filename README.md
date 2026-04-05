@@ -5,7 +5,7 @@
 ## 技術構成
 - @eslint/js@9.39.4
 - @tailwindcss/vite@4.2.2
-- @types/node@25.5.0
+- @types/node@25.5.2
 - @types/react-dom@19.2.3
 - @types/react@19.2.14
 - @vitejs/plugin-react@6.0.1
@@ -27,8 +27,4 @@
 ```bash
 VITE_CLOUDFLARE_SUBDOMAIN = プロジェクトディレクトリ名.cloudflare-worker名.workers.dev
 VITE_CHATBOT_WORKER_ENDPOINT = Chatbotの公開エンドポイント/api/generate
-VITE_WORKER_ENDPOINT = 設定した公開エンドポイント/api/reinfolib
 ```
-
-## ToDo / Wants
-- AIに情報集及び回答してもらう、選択したエリア情報のテーマ選定及びプロンプト調整

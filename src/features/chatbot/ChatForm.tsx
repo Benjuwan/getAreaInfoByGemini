@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type SyntheticEvent } from "react";
 import type { chatFormPropsType, filePreviewType, imagePartsType } from "./type/GeminiType";
-import { useChatviewStore } from "../../stores/useChatviewStore";
+import { useFacilitiesStore } from "../../stores/useFacilitiesStore";
+import { SelectFacilities } from "../select-area/components/SelectFacilities";
 import { FileUploader } from "./FileUploader";
 import { useGenerateChat } from "./hooks/useGenerateChat";
 import { useHandleInputValueSanitize } from "./hooks/useHandleInputValueSanitize";
@@ -9,7 +10,7 @@ import { useCheckDesktopView } from "./hooks/useCheckDesktopView";
 export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
     const { loading, setLoading, chatHistory, setChatHistory, handleChatView } = props;
 
-    const selectedCityname = useChatviewStore((state) => state.selectedCityname);
+    const selectedCityname = useFacilitiesStore((state) => state.selectedCityname);
 
     const { generateChat } = useGenerateChat();
     const { isDesktopView } = useCheckDesktopView();
@@ -24,7 +25,7 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
     }
 
     const prepareGenerateChat = (): void => {
-        const userPromptMessage = `対象エリア：${selectedCityname} | \n ${input}`;
+        const userPromptMessage = input.trim(); // 前後の空白を削除してから送信する
         console.log(userPromptMessage, chatHistory.length);
 
         generateChat(
@@ -68,6 +69,7 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
                 <div className="flex justify-end"><button type="button" onClick={handleChatView} className="cursor-pointer mb-2 text-[#d90f0f] underline text-xs hover:no-underline active:no-underline">チャットを閉じる</button></div>
             }
             <p className="text-xs">- 選択中のエリア：【{selectedCityname}】</p>
+            <SelectFacilities />
             <textarea className="text-base pl-[.25em] w-full h-[50vw] max-h-96 border border-[#bebebe] rounded mb-4 lg:h-[clamp(80px,50vh,240px)]" onKeyDown={handleKeydown} name="entryUserMess" value={input} disabled={loading} onChange={(e: SyntheticEvent<HTMLTextAreaElement>) => handleInput(e)} placeholder={`${selectedCityname} を対象に調べる`}>&nbsp;</textarea>
             <FileUploader props={{
                 loading: loading,

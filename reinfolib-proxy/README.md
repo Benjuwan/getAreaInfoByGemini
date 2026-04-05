@@ -22,7 +22,6 @@ npm i
 - `reinfolib-proxy/.dev.vars`
 ```bash
 REINFOLIB_API_KEY = 不動産APIキー
-WORKER_ENDPOINT_FACILITIES = 設定した公開エンドポイント/api/reinfolib/facilities
 ```
 
 ## 不動産APIの呼び出し例

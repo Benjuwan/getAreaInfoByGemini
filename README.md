@@ -28,3 +28,7 @@
 VITE_CLOUDFLARE_SUBDOMAIN = プロジェクトディレクトリ名.cloudflare-worker名.workers.dev
 VITE_CHATBOT_WORKER_ENDPOINT = Chatbotの公開エンドポイント/api/generate
 ```
+
+### APIエンドポイントの管理ファイル
+- `src/features/select-area/constance/reinfolib-config.ts`  
+[不動産情報ライブラリ](https://www.reinfolib.mlit.go.jp/)を利用した、都道府県別の市区町村データと、施設コードから周辺施設データを取得するAPIエンドポイントの管理ファイル。

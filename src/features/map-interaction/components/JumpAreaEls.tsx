@@ -140,10 +140,10 @@ export const JumpAreaEls = memo(() => {
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">京都府</h4>
                         <SelectPrefCities prefJaName="京都府" />
                     </li>
-                    {/* <li id="pref-osaka" className="bg-white rounded p-4">
+                    <li id="pref-osaka" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">大阪府</h4>
                         <SelectPrefCities prefJaName="大阪府" />
-                    </li> */}
+                    </li>
                     <li id="pref-hyogo" className="bg-white rounded p-4">
                         <h4 className="font-bold border-b pb-2 mb-2 text-gray-800">兵庫県</h4>
                         <SelectPrefCities prefJaName="兵庫県" />

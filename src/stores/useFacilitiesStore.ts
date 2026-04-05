@@ -4,7 +4,7 @@ type FacilitiesStore = {
     selectedCityname: string;
     setCityname: (newCityname: string) => void;
     facilitiesDataText: string | undefined;
-    setFacilitiesDataText: (data: string) => void;
+    setFacilitiesDataText: (data: string | undefined) => void;
 };
 
 export const useFacilitiesStore = create<FacilitiesStore>((set) => ({

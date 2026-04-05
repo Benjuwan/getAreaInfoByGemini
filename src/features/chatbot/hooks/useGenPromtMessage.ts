@@ -1,3 +1,4 @@
+import { useFacilitiesStore } from "../../../stores/useFacilitiesStore";
 import { thePromptGuide } from "../constance/prompt";
 import type { chatMessageType, imagePartsType } from "../type/GeminiType";
 
@@ -46,6 +47,9 @@ const _geminiCall = async (thePromtMessage: string, imageParts?: imagePartsType[
 }
 
 export const useGenPromtMessage = () => {
+    const selectedCityname = useFacilitiesStore((state) => state.selectedCityname);
+    const facilitiesDataText = useFacilitiesStore((state) => state.facilitiesDataText);
+
     // `genPromtMessage`は、Gemini API の`Promise`結果（＝回答結果： 非同期処理による文字列）を受け取って「その`Promise`（非同期処理の結果）を単に返す」だけの同期関数
     // もし Gemini API の`Promise`結果を加工して返したり、ログ出力して中身を確認したりしたい場合は、async, await の記述が必要となる
     const genPromtMessage = (
@@ -53,6 +57,9 @@ export const useGenPromtMessage = () => {
         input: string,
         imageParts?: imagePartsType[]
     ): Promise<string> => {
+        const groundingContext = facilitiesDataText ? `\n\n【参考周辺施設データ】\n${facilitiesDataText}` : "";
+        const userPromptMessage = `対象エリア：${selectedCityname} ${groundingContext} | \n\n質問：${input}`;
+
         const chainMessage: string[] = Object.values(chatHistory).map((chat, i) => `回答番号：${i + 1} | ${chat.content}\n`);
 
         const thePromtMessage: string = `
@@ -71,7 +78,7 @@ export const useGenPromtMessage = () => {
         ${chainMessage}
         
         ---
-        これまでのやり取りを踏まえた上で、ユーザーの新たな入力内容である【${input}】に回答してください` : input}`;
+        これまでのやり取りを踏まえた上で、ユーザーの新たな入力内容である【${userPromptMessage}】に回答してください` : userPromptMessage}`;
 
         if (IS_DEV) {
             console.log(thePromtMessage);

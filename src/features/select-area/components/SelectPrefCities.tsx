@@ -1,14 +1,15 @@
 import { useState, memo, type SyntheticEvent, useEffect, useCallback } from 'react';
 import { WORKER_ENDPOINT } from '../constance/reinfolib-config';
 import { prefcodeData } from '../constance/prefcodeData';
-import { useChatviewStore } from '../../../stores/useChatviewStore';
 import type { CityAryType, GetCityAryData, prefJaNameType } from '../ts/cityDataAryEls';
+import { useChatviewStore } from '../../../stores/useChatviewStore';
+import { useFacilitiesStore } from '../../../stores/useFacilitiesStore';
 
 export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameType }) => {
     const [cities, setCities] = useState<CityAryType[]>([]);
 
     const handleChatView = useChatviewStore((state) => state.handleChatView);
-    const setCityname = useChatviewStore((state) => state.setCityname);
+    const setCityname = useFacilitiesStore((state) => state.setCityname);
 
     const getCityAryData = useCallback(async (prefJaName: prefJaNameType): Promise<CityAryType[]> => {
         // Props で渡ってきた都道府県名に準拠する都道府県コードを取得
@@ -31,10 +32,13 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
         return data.data;
     }, []);
 
-    const changeTargetArea = (e: SyntheticEvent<HTMLSelectElement>): void => {
+    const changeTargetArea = async (e: SyntheticEvent<HTMLSelectElement>): Promise<void> => {
         handleChatView();
-        setCityname(`${prefJaName}${e.currentTarget.value}`);
-        console.log(prefJaName, e.currentTarget.value);
+        const selectedCity = e.currentTarget.value;
+
+        // 周辺施設情報を取得するために文字列分離処理（`split`）を行うため
+        // スネークケースで都道府県名と市区町村名を結合して状態管理
+        setCityname(`${prefJaName}_${selectedCity}`);
         return;
     }
 

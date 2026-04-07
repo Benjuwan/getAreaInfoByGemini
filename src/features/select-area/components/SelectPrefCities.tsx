@@ -10,8 +10,6 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
 
     const handleChatView = useChatviewStore((state) => state.handleChatView);
     const setCityname = useFacilitiesStore((state) => state.setCityname);
-    const facilitiesDataText = useFacilitiesStore((state) => state.facilitiesDataText);
-    const setFacilitiesDataText = useFacilitiesStore((state) => state.setFacilitiesDataText);
 
     const getCityAryData = useCallback(async (prefJaName: prefJaNameType): Promise<CityAryType[]> => {
         // Props で渡ってきた都道府県名に準拠する都道府県コードを取得
@@ -42,10 +40,6 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
         // スネークケースで都道府県名と市区町村名を結合して状態管理
         setCityname(`${prefJaName}_${selectedCity}`);
 
-        if (typeof facilitiesDataText !== undefined) {
-            setFacilitiesDataText(undefined); // 既存情報があれば初期化
-        }
-
         return;
     }
 
@@ -56,7 +50,7 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
         }
         const fetcedCitiesData = getCityAryData(prefJaName);
         fetcedCitiesData.then(data => setCities([initCityAryData, ...data]));
-    }, [prefJaName, getCityAryData, setCities]);
+    }, [prefJaName, getCityAryData]);
 
     return (
         <section className='my-4'>

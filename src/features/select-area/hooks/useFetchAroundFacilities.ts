@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { IS_DEV, WORKER_ENDPOINT_FACILITIES } from "../constance/reinfolib-config";
+import { WORKER_ENDPOINT_FACILITIES } from "../constance/reinfolib-config";
 import type { FacilityCodeType } from "../ts/cityDataAryEls";
 import { useFacilitiesStore } from "../../../stores/useFacilitiesStore";
 
@@ -14,10 +14,6 @@ export const useFetchAroundFacilities = () => {
         const thePrefJaName: string = selectedCity.split('_')[0];
         const theCityname: string = selectedCity.split('_').at(-1) ?? "noCityData";
 
-        if (IS_DEV) {
-            console.log(thePrefJaName, theCityname, facilityCode);
-        }
-
         // 選択した都道府県の市区町村にある周辺施設情報を取得
         try {
             const res = await fetch(WORKER_ENDPOINT_FACILITIES, {
@@ -31,10 +27,6 @@ export const useFetchAroundFacilities = () => {
             });
             if (res.ok) {
                 const data = await res.json();
-                if (IS_DEV) {
-                    console.log(data);
-                }
-
                 setFacilitiesDataText(JSON.stringify(data));
             }
         } catch (e: unknown) {

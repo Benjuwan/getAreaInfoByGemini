@@ -19,7 +19,7 @@
 - tailwindcss@4.2.2
 - typescript-eslint@8.58.0
 - typescript@5.9.3
-- vite@8.0.3
+- vite@8.0.5
 - zustand@5.0.12
 
 ## 必要ファイル

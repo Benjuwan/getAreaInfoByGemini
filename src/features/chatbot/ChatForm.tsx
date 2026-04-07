@@ -26,7 +26,6 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
 
     const prepareGenerateChat = (): void => {
         const userPromptMessage = input.trim(); // 前後の空白を削除してから送信する
-        console.log(userPromptMessage, chatHistory.length);
 
         generateChat(
             setLoading,
@@ -69,7 +68,7 @@ export const ChatForm = ({ props }: { props: chatFormPropsType }) => {
                 <div className="flex justify-end"><button type="button" onClick={handleChatView} className="cursor-pointer mb-2 text-[#d90f0f] underline text-xs hover:no-underline active:no-underline">チャットを閉じる</button></div>
             }
             <p className="text-xs">- 選択中のエリア：【{selectedCityname}】</p>
-            <SelectFacilities />
+            <SelectFacilities loading={loading} />
             <textarea className="text-base pl-[.25em] w-full h-[50vw] max-h-96 border border-[#bebebe] rounded mb-4 lg:h-[clamp(80px,50vh,240px)]" onKeyDown={handleKeydown} name="entryUserMess" value={input} disabled={loading} onChange={(e: SyntheticEvent<HTMLTextAreaElement>) => handleInput(e)} placeholder={`${selectedCityname} を対象に調べる`}>&nbsp;</textarea>
             <FileUploader props={{
                 loading: loading,

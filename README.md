@@ -13,13 +13,13 @@
 - eslint-plugin-react-refresh@0.5.2
 - eslint@9.39.4
 - globals@17.4.0
-- react-dom@19.2.4
+- react-dom@19.2.5
 - react-markdown@10.1.0
-- react@19.2.4
+- react@19.2.5
 - tailwindcss@4.2.2
-- typescript-eslint@8.58.0
+- typescript-eslint@8.58.1
 - typescript@5.9.3
-- vite@8.0.5
+- vite@8.0.8
 - zustand@5.0.12
 
 ## 必要ファイル

@@ -16,7 +16,7 @@ npm i
 
 ## 技術構成
 - hono@4.12.12
-- wrangler@4.80.0
+- wrangler@4.81.0
 
 ## 必要ファイル
 - `reinfolib-proxy/.dev.vars`
@@ -50,6 +50,11 @@ const data = await response.json();
 | XKT017   | 図書館                       | 公立図書館など                             |
 | XKT018   | 市区町村役場及び集会施設等   | 役所、公民館、公会堂など                   |
 | XKT019   | 自然公園地域                 | 国立公園、国定公園など                     |
+
+> [!NOTE]
+> 上記施設コードと[gsimaps (地理院地図):国土地理院のジオコーディングAPI | 国土地理院](https://github.com/gsi-cyberjapan/gsimaps)を組み合わせて「緯度経度を取得」し、
+> その緯度経度を「XYZタイル座標に変換」した上で、
+> それを使って不動産情報ライブラリAPIから周辺施設情報を得る仕組みを採っています。
 
 ## Cloudflare Workers にデプロイ
 `reinfolib-proxy`にいる状態で以下のコマンドを実施

@@ -8,7 +8,6 @@ export const SelectFacilities = memo(({ loading }: { loading: boolean }) => {
     const [selectedFacilityCode, setSelectedFacilityCode] = useState<FacilityCodeType>('EXCEPTION');
 
     const selectedCityname = useFacilitiesStore((state) => state.selectedCityname);
-    const facilitiesDataText = useFacilitiesStore((state) => state.facilitiesDataText);
     const setFacilitiesDataText = useFacilitiesStore((state) => state.setFacilitiesDataText);
 
     const { fetchAroundFacilities } = useFetchAroundFacilities();
@@ -37,9 +36,6 @@ export const SelectFacilities = memo(({ loading }: { loading: boolean }) => {
             setFacilitiesDataText(undefined); // 初期化
         }
     }, [fetchAroundFacilities, selectedCityname, selectedFacilityCode, setFacilitiesDataText]);
-
-    console.log(selectedFacilityCode);
-    console.log(facilitiesDataText);
 
     return (
         <>

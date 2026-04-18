@@ -15,8 +15,8 @@ npm i
 ```
 
 ## 技術構成
-- hono@4.12.12
-- wrangler@4.81.0
+- hono@4.12.14
+- wrangler@4.83.0
 
 ## 必要ファイル
 - `reinfolib-proxy/.dev.vars`

@@ -22,7 +22,8 @@ const _geminiCall = async (thePromtMessage: string, imageParts?: imagePartsType[
                     data: img.base64Data, // キー名を data に変更
                     mimeType: img.type    // キー名を mimeType に変更
                 }
-            }))
+            })),
+            temperature: 0.1, // 0に近いほど事実に基づいた回答が得られやすくなる
         })
     });
 

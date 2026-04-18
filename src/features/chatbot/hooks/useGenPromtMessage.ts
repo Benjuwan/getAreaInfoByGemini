@@ -58,7 +58,10 @@ export const useGenPromtMessage = () => {
         imageParts?: imagePartsType[]
     ): Promise<string> => {
         const groundingContext = facilitiesDataText ? `\n\n【参考周辺施設データ】\n${facilitiesDataText}` : "";
-        const userPromptMessage = `対象エリア：${selectedCityname} ${groundingContext} | \n\n質問：${input}`;
+
+        const prefName = selectedCityname.split('_')[0];
+        const cityName = selectedCityname.split('_').at(-1);
+        const userPromptMessage = `【対象エリア】 都道府県名「${prefName}」： 市区町村名「${cityName}」 ${groundingContext} | \n\n【質問】 ${input}`;
 
         const chainMessage: string[] = Object.values(chatHistory).map((chat, i) => `回答番号：${i + 1} | ${chat.content}\n`);
 

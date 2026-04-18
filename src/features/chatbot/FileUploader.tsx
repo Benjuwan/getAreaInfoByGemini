@@ -76,7 +76,9 @@ export const FileUploader = ({ props }: { props: FileUploaderPropsType }) => {
             if (fileInputRef.current) {
                 fileInputRef.current.value = '';
             }
-            throw new Error(`ファイルの描画処理中にエラーが発生 | ${error}`);
+            // `cause`は ES2022 で標準化されたオプションで、エラーチェーンを正しく維持できるようになるため、
+            // Lintルールによって指定を求められる（指定しないとLintエラーが発生する）
+            throw new Error("ファイルの描画処理中にエラーが発生", { cause: error });
         }
     };
 

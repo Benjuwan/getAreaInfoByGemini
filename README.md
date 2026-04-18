@@ -3,22 +3,22 @@
 ※事例として日本地図なだけであり、希望する地域のSVG画像を用意してインタラクション設定すれば汎用可能。
 
 ## 技術構成
-- @eslint/js@9.39.4
+- @eslint/js@10.0.1
 - @tailwindcss/vite@4.2.2
-- @types/node@25.5.2
+- @types/node@25.6.0
 - @types/react-dom@19.2.3
 - @types/react@19.2.14
 - @vitejs/plugin-react@6.0.1
-- eslint-plugin-react-hooks@7.0.1
+- eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.2
-- eslint@9.39.4
-- globals@17.4.0
+- eslint@10.2.1
+- globals@17.5.0
 - react-dom@19.2.5
 - react-markdown@10.1.0
 - react@19.2.5
 - tailwindcss@4.2.2
-- typescript-eslint@8.58.1
-- typescript@5.9.3
+- typescript-eslint@8.58.2
+- typescript@6.0.3
 - vite@8.0.8
 - zustand@5.0.12
 

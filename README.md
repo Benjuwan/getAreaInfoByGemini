@@ -4,7 +4,7 @@
 
 ## 技術構成
 - @eslint/js@10.0.1
-- @tailwindcss/vite@4.2.2
+- @tailwindcss/vite@4.2.4
 - @types/node@25.6.0
 - @types/react-dom@19.2.3
 - @types/react@19.2.14
@@ -16,10 +16,10 @@
 - react-dom@19.2.5
 - react-markdown@10.1.0
 - react@19.2.5
-- tailwindcss@4.2.2
-- typescript-eslint@8.58.2
+- tailwindcss@4.2.4
+- typescript-eslint@8.59.0
 - typescript@6.0.3
-- vite@8.0.8
+- vite@8.0.10
 - zustand@5.0.12
 
 ## 必要ファイル

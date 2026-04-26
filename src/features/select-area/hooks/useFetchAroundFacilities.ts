@@ -27,7 +27,7 @@ export const useFetchAroundFacilities = () => {
             });
             if (res.ok) {
                 const data = await res.json();
-                setFacilitiesDataText(JSON.stringify(data));
+                setFacilitiesDataText(JSON.stringify(data).trim());
             }
         } catch (e: unknown) {
             if (e instanceof Error) {

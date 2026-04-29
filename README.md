@@ -1,6 +1,7 @@
 # getAreaInfoByGemini
-日本地図（インタラクション付きマップUI）内の各都道府県を押下すると該当エリア（選んだ都道府県）にジャンプします。該当エリア内の市区町村を選ぶとチャットボットが起動して選んだ市区町村における○○情報をAIが情報収集および整理して回答してくれるUI機能です。  
-※事例として日本地図なだけであり、希望する地域のSVG画像を用意してインタラクション設定すれば汎用可能。
+- [公開ページ](https://getareainfobygemini.pages.dev/)  
+
+日本地図（インタラクション付きマップUI）内の各都道府県を押下すると該当エリア（選んだ都道府県）にジャンプします。該当エリア内の市区町村を選ぶとチャットボットが起動して選んだ市区町村における地域情報をAIが情報収集および整理して回答してくれるUI機能です。
 
 ## 技術構成
 - @eslint/js@10.0.1
@@ -17,7 +18,7 @@
 - react-markdown@10.1.0
 - react@19.2.5
 - tailwindcss@4.2.4
-- typescript-eslint@8.59.0
+- typescript-eslint@8.59.1
 - typescript@6.0.3
 - vite@8.0.10
 - zustand@5.0.12
@@ -32,3 +33,11 @@ VITE_CHATBOT_WORKER_ENDPOINT = Chatbotの公開エンドポイント/api/generat
 ### APIエンドポイントの管理ファイル
 - `src/features/select-area/constance/reinfolib-config.ts`  
 [不動産情報ライブラリ](https://www.reinfolib.mlit.go.jp/)を利用した、都道府県別の市区町村データと、施設コードから周辺施設データを取得するAPIエンドポイントの管理ファイル。
+
+## Cloudflare Pages でのデプロイ設定時の注意事項
+Vite利用及び初期設定のままの場合、`Build configuration`では以下設定にすること。
+※以下設定にしないとページが表示されない、またはビルド・デプロイエラーになります。
+```bash
+Build command: npm run build
+Build output: dist
+```

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors';
 import { ContentfulStatusCode } from 'hono/utils/http-status';
-// import { ALLOWED_ORIGINS } from '../config/theConfig';
+import { ALLOWED_ORIGINS } from '../config/theConfig';
 
 type Bindings = {
   REINFOLIB_API_KEY: string;
@@ -9,20 +9,17 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>();
 
-// CAUTION | 現状はどこからでも受け付ける設定
-app.use('/*', cors());
-
 // 許可ドメインを制御する場合は以下を有効化する
-// app.use('/*', cors({
-//   origin: (origin) => {
-//     // 開発中などで origin がない場合（curlなど）や、許可リストに含まれている場合はそのオリジンを返す
-//     if (!origin || ALLOWED_ORIGINS.includes(origin)) {
-//       return origin;
-//     }
-//     // リストにない場合は許可しない（nullまたはundefinedを返すとブロックされる）
-//     return undefined; 
-//   },
-// }));
+app.use('/*', cors({
+  origin: (origin) => {
+    // 開発中などで origin がない場合（curlなど）や、許可リストに含まれている場合はそのオリジンを返す
+    if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+      return origin;
+    }
+    // リストにない場合は許可しない（nullまたはundefinedを返すとブロックされる）
+    return undefined;
+  },
+}));
 
 // 都道府県別の市区町村データ取得用エンドポイント
 app.post('/api/reinfolib', async (c) => {

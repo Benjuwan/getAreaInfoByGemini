@@ -38,6 +38,6 @@ export const facilityTypeData = [
     },
     {
         "code": "EXCEPTION",
-        "name": "*それ以外の施設情報（ハルシネーションリスクあり）",
+        "name": "*それ以外の施設情報",
     }
 ] as const; // リテラル型として固める（readonly：編集不可にする）

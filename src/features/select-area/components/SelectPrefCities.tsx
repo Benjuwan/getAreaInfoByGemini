@@ -33,8 +33,12 @@ export const SelectPrefCities = memo(({ prefJaName }: { prefJaName: prefJaNameTy
     }, []);
 
     const changeTargetArea = async (e: SyntheticEvent<HTMLSelectElement>): Promise<void> => {
-        handleChatView();
         const selectedCity = e.currentTarget.value;
+        if (selectedCity.includes('の市区町村')) {
+            return;
+        }
+
+        handleChatView();
 
         // 周辺施設情報を取得するために文字列分離処理（`split`）を行うため
         // スネークケースで都道府県名と市区町村名を結合して状態管理

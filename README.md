@@ -1,7 +1,7 @@
 # getAreaInfoByGemini
-- [公開ページ](https://getareainfobygemini.pages.dev/)  
+- [都道府県別市区町村のエリア情報AI（Gemini）検索](https://getareainfobygemini.pages.dev/)  
 
-日本地図（インタラクション付きマップUI）内の各都道府県を押下すると該当エリア（選んだ都道府県）にジャンプします。該当エリア内の市区町村を選ぶとチャットボットが起動して選んだ市区町村における地域情報をAIが情報収集および整理して回答してくれるUI機能です。
+各都道府県（※スマホやタブレットでは地域）エリアに触れると当該エリアセクションにジャンプします。当該エリアセクションで市区町村を選ぶとチャットボットが起動して、選択した市区町村における地域情報をAI（Gemini）が情報収集および整理して回答します。
 
 ## 技術構成
 - @eslint/js@10.0.1
@@ -12,8 +12,8 @@
 - @vitejs/plugin-react@6.0.1
 - eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.2
-- eslint@10.2.1
-- globals@17.5.0
+- eslint@10.3.0
+- globals@17.6.0
 - react-dom@19.2.5
 - react-markdown@10.1.0
 - react@19.2.5

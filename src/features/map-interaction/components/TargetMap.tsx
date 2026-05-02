@@ -40,8 +40,8 @@ export const TargetMap = memo(() => {
     return (
         <div className="max-w-240 m-auto py-[5em] px-4">
             <div className="mb-[5em] p-4 bg-[#f1f1f1] rounded">
-                <h1 className="mb-8 text-center">各都道府県をクリックして移動（ページ内ジャンプ）するUIデモ</h1>
-                <p className="text-sm">SVG画像内の各種オブジェクトをグループ（`g`）ごとに分割し、それぞれにインタラクション（ページ内ジャンプ）を付けたUIです。</p>
+                <h1 className="mb-8 text-center">都道府県別市区町村のエリア情報AI（Gemini）検索</h1>
+                <p className="text-sm">各都道府県（※スマホやタブレットでは地域）エリアに触れると当該エリアセクションにジャンプします。当該エリアセクションで市区町村を選ぶとチャットボットが起動して、選択した市区町村における地域情報をAI（Gemini）が情報収集および整理して回答します。</p>
             </div>
             <section className="mb-[5em]">
                 <TargetSvgElm clickInteractionArea={clickInteractionArea} />

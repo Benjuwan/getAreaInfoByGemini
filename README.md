@@ -5,23 +5,23 @@
 
 ## 技術構成
 - @eslint/js@10.0.1
-- @tailwindcss/vite@4.3.0
-- @types/node@25.8.0
+- @tailwindcss/vite@4.3.1
+- @types/node@25.9.3
 - @types/react-dom@19.2.3
-- @types/react@19.2.14
+- @types/react@19.2.17
 - @vitejs/plugin-react@6.0.2
 - eslint-plugin-react-hooks@7.1.1
-- eslint-plugin-react-refresh@0.5.2
-- eslint@10.3.0
+- eslint-plugin-react-refresh@0.5.3
+- eslint@10.5.0
 - globals@17.6.0
-- react-dom@19.2.6
+- react-dom@19.2.7
 - react-markdown@10.1.0
-- react@19.2.6
-- tailwindcss@4.3.0
-- typescript-eslint@8.59.3
+- react@19.2.7
+- tailwindcss@4.3.1
+- typescript-eslint@8.61.1
 - typescript@6.0.3
-- vite@8.0.13
-- zustand@5.0.13
+- vite@8.0.16
+- zustand@5.0.14
 
 ## 必要ファイル
 - `.env`
@@ -31,13 +31,49 @@ VITE_CHATBOT_WORKER_ENDPOINT = Chatbotの公開エンドポイント/api/generat
 ```
 
 ### APIエンドポイントの管理ファイル
-- `src/features/select-area/constance/reinfolib-config.ts`  
+- [src/features/select-area/constance/reinfolib-config.ts](./src/features/select-area/constance/reinfolib-config.ts)  
 [不動産情報ライブラリ](https://www.reinfolib.mlit.go.jp/)を利用した、都道府県別の市区町村データと、施設コードから周辺施設データを取得するAPIエンドポイントの管理ファイル。
 
-## Cloudflare Pages でのデプロイ設定時の注意事項
-Vite利用及び初期設定のままの場合、`Build configuration`では以下設定にすること。
-※以下設定にしないとページが表示されない、またはビルド・デプロイエラーになります。
-```bash
-Build command: npm run build
-Build output: dist
+- `reinfolib-config.ts`
+```ts
+// Vite が標準で提供している import.meta.env.DEV を使うと、npm run dev の時は true、ビルド後は false に自動で切り替わる
+export const IS_DEV: boolean = import.meta.env.DEV;
+
+// Cloudflare Workers のエンドポイント
+// バックエンド処理を「リクエスト時に瞬間起動」するサーバーレス環境（今回のユースケースではエンドポイント設置）
+// ローカル開発時は`http://localhost:8787/api/reinfolib`を使用
+export const WORKER_ENDPOINT = IS_DEV ?
+    'http://localhost:8787/api/reinfolib' :
+    `https://${import.meta.env.VITE_CLOUDFLARE_SUBDOMAIN}/api/reinfolib`;
+
+export const WORKER_ENDPOINT_FACILITIES = IS_DEV ?
+    'http://localhost:8787/api/reinfolib/facilities' :
+    `https://${import.meta.env.VITE_CLOUDFLARE_SUBDOMAIN}/api/reinfolib/facilities`;
 ```
+
+## 使い方
+### 1. バックエンド側（hono / Cloudflare Workers で動作するプロキシ）を起動
+```bash
+# バックエンド側ディレクトリへ移動
+cd reinfolib-proxy
+
+# バックエンド側（hono / Cloudflare Workers で動作するプロキシ）を起動
+npm run dev
+```
+
+**バックエンド側（hono / Cloudflare Workers で動作するプロキシ）を起動したまま**にしておき、別ターミナルでフロントエンド側を起動する。
+
+### 2. フロントエンド側の開発環境を起動
+```bash
+# ※ルートディレクトリがカレントディレクトリであることを確認してから
+npm run dev
+```
+
+> [!NOTE]
+> ## Cloudflare Pages でのデプロイ設定時の注意事項
+> Vite利用及び初期設定のままの場合、`Build configuration`では以下設定にすること。
+> ※以下設定にしないとページが表示されない、またはビルド・デプロイエラーになります。
+> ```bash
+> Build command: npm run build
+> Build output: dist
+> ```

@@ -5,22 +5,22 @@
 
 ## 技術構成
 - @eslint/js@10.0.1
-- @tailwindcss/vite@4.3.1
-- @types/node@25.9.3
+- @tailwindcss/vite@4.3.3
+- @types/node@25.9.5
 - @types/react-dom@19.2.3
 - @types/react@19.2.17
-- @vitejs/plugin-react@6.0.2
+- @vitejs/plugin-react@6.0.4
 - eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.3
-- eslint@10.5.0
-- globals@17.6.0
-- react-dom@19.2.7
+- eslint@10.8.0
+- globals@17.8.0
+- react-dom@19.2.8
 - react-markdown@10.1.0
-- react@19.2.7
-- tailwindcss@4.3.1
-- typescript-eslint@8.61.1
+- react@19.2.8
+- tailwindcss@4.3.3
+- typescript-eslint@8.65.0
 - typescript@6.0.3
-- vite@8.0.16
+- vite@8.1.5
 - zustand@5.0.14
 
 ## 必要ファイル

@@ -7,9 +7,9 @@
 - @eslint/js@10.0.1
 - @tailwindcss/vite@4.3.3
 - @types/node@25.9.5
-- @types/react-dom@19.2.3
-- @types/react@19.2.17
-- @vitejs/plugin-react@6.0.4
+- @types/react-dom@19.2.4
+- @types/react@19.2.18
+- @vitejs/plugin-react@6.0.5
 - eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.3
 - eslint@10.8.0
@@ -20,7 +20,7 @@
 - tailwindcss@4.3.3
 - typescript-eslint@8.65.0
 - typescript@6.0.3
-- vite@8.1.5
+- vite@8.2.0
 - zustand@5.0.14
 
 ## 必要ファイル

@@ -15,15 +15,8 @@ const _geminiCall = async (thePromtMessage: string, imageParts?: imagePartsType[
         // ※`body`の中身はバックエンドの受付仕様に合わせる
         body: JSON.stringify({
             prompt: thePromtMessage,
-            // model: "gemini-3-flash-preview", // モデル設定（※設定すると500エラーが出る時もあるのでデフォルトでは無効化）
-            imageParts: (imageParts ?? []).map((img) => ({
-                // Gemini SDK が期待する画像処理データ構造の形で渡す
-                inlineData: {
-                    data: img.base64Data, // キー名を data に変更
-                    mimeType: img.type    // キー名を mimeType に変更
-                }
-            })),
-            temperature: 0.1, // 0に近いほど事実に基づいた回答が得られやすくなる
+            // model: "gemini-3-flash-preview", // モデル設定（デフォルトモデルは`gemini-proxy/src/config/theConfig.ts`で設定）
+            imageParts: imageParts
         })
     });
 
@@ -58,13 +51,15 @@ export const useGenPromtMessage = () => {
         input: string,
         imageParts?: imagePartsType[]
     ): Promise<string> => {
-        const groundingContext = facilitiesDataText ? `\n\n【参考周辺施設データ】\n${facilitiesDataText}` : "";
+        // Gemini が `JSON`, `json` というキーワードに過剰反応してJSON形式での出力に固執し、結果的に400エラーが発生する事態が起きた。
+        // そこで、マークダウンのコードブロック（```json ...```）で囲むことで、モデルに「これはJSON形式の参考データである」と正確に認識させる回避策を実施。
+        const groundingContext = facilitiesDataText ? `\n\n【参考周辺施設データ】\n\`\`\`json\n${facilitiesDataText}\n\`\`\`` : "";
 
         const prefName = selectedCityname.split('_')[0];
         const cityName = selectedCityname.split('_').at(-1);
         const userPromptMessage = `【対象エリア】 都道府県名「${prefName}」： 市区町村名「${cityName}」 ${groundingContext} | \n\n【質問】 ${input}`;
 
-        const chainMessage: string[] = Object.values(chatHistory).map((chat, i) => `回答番号：${i + 1} | ${chat.content}\n`);
+        const chainMessage: string = Object.values(chatHistory).map((chat, i) => `回答番号：${i + 1} | ${chat.content}`).join('\n');
 
         const thePromtMessage: string = `
         はじめに、以下【生成ガイド】を読み込んでください

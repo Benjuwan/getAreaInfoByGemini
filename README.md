@@ -11,17 +11,17 @@
 - @types/react@19.2.18
 - @vitejs/plugin-react@6.0.5
 - eslint-plugin-react-hooks@7.1.1
-- eslint-plugin-react-refresh@0.5.3
-- eslint@10.8.0
-- globals@17.8.0
+- eslint-plugin-react-refresh@0.5.4
+- eslint@10.8.1
+- globals@17.11.0
 - react-dom@19.2.8
 - react-markdown@10.1.0
 - react@19.2.8
 - tailwindcss@4.3.3
-- typescript-eslint@8.65.0
+- typescript-eslint@8.67.0
 - typescript@6.0.3
-- vite@8.2.0
-- zustand@5.0.14
+- vite@8.2.1
+- zustand@5.0.15
 
 ## 必要ファイル
 - `.env`

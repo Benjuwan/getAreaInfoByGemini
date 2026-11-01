@@ -12,16 +12,16 @@
 - @vitejs/plugin-react@6.1.2
 - eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.7
-- eslint@10.12.0
+- eslint@10.14.0
 - globals@17.13.0
-- react-dom@19.3.0
+- react-dom@19.3.1
 - react-markdown@10.1.0
-- react@19.3.0
+- react@19.3.1
 - tailwindcss@4.3.3
-- typescript-eslint@8.71.1
+- typescript-eslint@8.72.1
 - typescript@6.0.3
-- vite@8.3.4
-- zustand@5.0.15
+- vite@8.3.5
+- zustand@5.0.16
 
 ## 必要ファイル
 - `.env`

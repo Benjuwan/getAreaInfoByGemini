@@ -15,8 +15,12 @@ npm i
 ```
 
 ## 技術構成
-- hono@4.13.13
-- wrangler@4.149.0
+- hono@4.13.15
+- wrangler@4.156.0
+
+> [!NOTE]
+> - アップデート・アップグレード後の更新処理
+> `npx wrangler deploy`を実行することで、Cloudflare Workersにデプロイされます。
 
 ## 必要ファイル
 - `reinfolib-proxy/.dev.vars`
